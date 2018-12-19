@@ -2,7 +2,12 @@
 module.exports = (robot) => {
     // 話しかける感じの言葉への返答
     robot.hear(/助けて|たすけて|聞いて|きいて|ねえ/i, (msg) => {
-        msg.send('なに？');
+        const messages = [
+            'なにー？',
+            'どうしたの？'
+        ];
+        const message = messages[Math.floor(Math.random() * messages.length)];
+        msg.send(message);
     });
 
     // お礼する感じの言葉への返答
