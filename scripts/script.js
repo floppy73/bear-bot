@@ -16,6 +16,11 @@ module.exports = (robot) => {
         msg.send(message);
     });
 
+    // 愚痴への返答
+    robot.hear(/疲れた|つかれた/i, (msg) => {
+        msg.send('お疲れ様');
+    });
+
     // 上記以外のメッセージに対して相槌を打つ
     robot.catchAll((msg) => {
         const messages = [
