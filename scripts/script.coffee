@@ -1,5 +1,10 @@
 'use strict'
 module.exports = (robot) =>
+    # あいさつへの返答
+    robot.hear /おはよう|こんにちは|こんばんは|おやすみ/i, (msg) =>
+        text = msg.message.text
+        msg.send text
+
     # 話しかける感じの言葉への返答
     robot.hear /助けて|たすけて|聞いて|きいて|ねえ/i, (msg) =>
         messages = [
