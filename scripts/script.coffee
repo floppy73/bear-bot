@@ -25,9 +25,8 @@ module.exports = (robot) =>
 
     # 褒めてくれる
     robot.hear /褒めて|ほめて/i, (msg) =>
-        username = msg.message.user.profile.display_name
         messages = [
-            "#{username}は頑張ってるよー"
+            "頑張ってるね"
             'いつもお疲れ様'
         ]
         message = messages[Math.floor(Math.random() * messages.length)]
