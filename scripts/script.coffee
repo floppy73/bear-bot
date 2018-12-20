@@ -23,6 +23,15 @@ module.exports = (robot) =>
     robot.hear /疲れた|つかれた/i, (msg) =>
         msg.send 'お疲れ様'
 
+    # 褒めてくれる
+    robot.hear /褒めて|ほめて/i, (msg) =>
+        username = msg.message.user.profile.display_name
+        messages = [
+            "#{username}は頑張ってるよー"
+            'いつもお疲れ様'
+        ]
+        msg.send message
+
     # 上記以外のメッセージに対して相槌を打つ
     robot.catchAll (msg) =>
         messages = [
