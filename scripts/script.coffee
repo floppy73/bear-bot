@@ -30,6 +30,7 @@ module.exports = (robot) =>
             "#{username}は頑張ってるよー"
             'いつもお疲れ様'
         ]
+        message = messages[Math.floor(Math.random() * messages.length)]
         msg.send message
 
     # 上記以外のメッセージに対して相槌を打つ
